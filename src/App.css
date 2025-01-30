@@ -1,0 +1,8 @@
+.main {
+  /* background-color: red; */
+  display: flex;
+}
+
+.main .right {
+  width: 100%;
+}

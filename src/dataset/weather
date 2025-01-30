@@ -1,0 +1,7 @@
+const weather = [
+  { city: "New York", temperature: 25 },
+  { city: "Los Angeles", temperature: 30 },
+  { city: "Chicago", temperature: 20 },
+];
+
+export default weather;
