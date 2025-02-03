@@ -1,5 +1,5 @@
-import "../styles/TableStyle.css";
-import React, { useState } from "react";
+import React from "react";
+import Status from "./Status";
 import { Link } from "react-router-dom";
 
 function TableHeader() {
@@ -8,168 +8,130 @@ function TableHeader() {
       <tr>
         <th>S/N</th>
         <th>Username</th>
-        <th>Investment Date</th>
-        <th>Start Date</th>
-        <th>End Date</th>
+        <th>Amount</th>
         <th>Investment Type</th>
-        <th>Cost</th>
+        <th>Start Date</th>
+        <th>Due Date</th>
         <th>Status</th>
       </tr>
     </thead>
   );
 }
 
-function TableRow(props) {
-  const [showDialogue, setShowDialogue] = useState(false);
-
-  const handleDialogue = () => {
-    setShowDialogue(!showDialogue);
-  };
-
+function TableRow({ sn, username, amount, type, start, end, status, onStatusClick }) {
   return (
     <tr>
-      <td>{props.sn}</td>
+      <td>{sn}</td>
+      <td>{username}</td>
+      <td>{amount}</td>
+      <td>{type}</td>
+      <td>{start}</td>
+      <td>{end}</td>
       <td>
-        <Link to="#" onClick={handleDialogue}>
-          {props.username}
+        <Link
+          to={`/status/${status}`}
+          state={{ amount, username, start, type, end }}
+          onClick={() => onStatusClick(status)}
+        >
+          <Status status={status} showText={false} />
         </Link>
-        {showDialogue && (
-          <div className="dialogue">
-            <h4>INVESTMENT DETAILS</h4>
-            <p>
-              <strong>Username:</strong> {props.username}
-            </p>
-            <p>
-              <strong>Investment Date:</strong> {props.date}
-            </p>
-            <p>
-              <strong>Start Date:</strong> {props.start}
-            </p>
-            <p>
-              <strong>End Date:</strong> {props.end}
-            </p>
-            <p>
-              <strong>Investment Type:</strong> {props.type}
-            </p>
-            <p>
-              <strong>Cost:</strong> {props.cost}
-            </p>
-            <p>
-              <strong>Status:</strong> {props.status}
-            </p>
-            <button onClick={() => setShowDialogue(false)}>Close</button>
-          </div>
-        )}
       </td>
-      <td>{props.date}</td>
-      <td>{props.start}</td>
-      <td>{props.end}</td>
-      <td>{props.type}</td>
-      <td>{props.cost}</td>
-      <td>{props.status}</td>
     </tr>
   );
 }
 
-function Table2() {
+function Table2({ onStatusClick }) {
   const data = [
     {
       sn: 1,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$3,000",
+      type:"Parent",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Parent",
-      cost: "$3,000",
-      status: "Ongoing",
+      status: "active",
     },
     {
       sn: 2,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$2,000",
+      type:"Youth",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Youth",
-      cost: "$2,000",
-      status: "Pending",
+      status: "inactive",
     },
     {
       sn: 3,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$1,500",
+      type:"Children",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Youth",
-      cost: "$1,500",
-      status: "Completed",
+      status: "active",
     },
     {
       sn: 4,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$3,000",
+      type:"Parent",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Parent",
-      cost: "$3,000",
-      status: "Completed",
+      status: "active",
     },
     {
       sn: 5,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$3,000",
+      type:"Parent",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Parent",
-      cost: "$3,000",
-      status: "Ongoing",
+      status: "inactive",
     },
     {
       sn: 6,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$2,000",
+      type:"Youth",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Parent",
-      cost: "$2,000",
-      status: "Pending",
+      status: "active",
     },
     {
       sn: 7,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$2,000",
+      type:"Youth",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Youth",
-      cost: "$2,000",
-      status: "Ongoing",
+      status: "inactive",
     },
     {
       sn: 8,
       username: "Echindo",
-      date: "12th Oct., 2024",
+      amount: "$2,000",
+      type:"Youth",
       start: "1st Nov., 2024",
       end: "30th Nov., 2024",
-      type: "Youth",
-      cost: "$2,000",
-      status: "Ongoing",
+      status: "active",
     },
   ];
+
   return (
-    <div>
-      <table>
+    <div className="overflow-x-auto p-4">
+      <table className="w-full border-collapse shadow-lg">
         <TableHeader />
         <tbody>
-          {data.map((row, index) => (
+          {data.map((row) => (
             <TableRow
-              key={index}
+              key={row.sn}
               sn={row.sn}
               username={row.username}
-              date={row.date}
+              amount={row.amount}
+              type={row.type}
               start={row.start}
               end={row.end}
-              type={row.type}
-              cost={row.cost}
               status={row.status}
+              onStatusClick={onStatusClick}
             />
           ))}
         </tbody>

@@ -1,0 +1,81 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+.container .box {
+  width: 100%;
+  background-color: lightgray;
+  margin-bottom: 20px;
+}
+.container .box p {
+  margin-left: 10px;
+  line-height: 35px;
+}
+.container .box button {
+  margin-left: 10px;
+  margin-right: 20px;
+  height: 30px;
+  width: 100px;
+  margin-bottom: 20px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.text h4{
+  margin-left: 20px;
+}
+.butt button{
+  width: 150px;
+  height: 40px;
+  margin-right: 30px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color: rgb(114, 74, 74);
+}
+.butt button:hover{
+  background-color: red;
+}
+
+
+/* Media query for screens with max-width of 802px */
+@media (max-width: 802px) {
+    .container {
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .container .box {
+      width: 70%;
+      padding: 15px;
+    }
+  
+    .container .box p {
+      font-size: 14px;
+      line-height: 30px;
+    }
+  
+    .container .box button {
+      width: 90%;
+      margin: 10px auto;
+      display: block;
+    }
+  }
+  
+  /* Media query for screens with min-width 803px and max-width 1300px */
+  @media (min-width: 803px) and (max-width: 1300px) {
+    .container {
+      width: 95%;
+    }
+  
+    .container .box {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .container .box button {
+      width: 120px;
+    }
+  }
+  

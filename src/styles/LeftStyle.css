@@ -35,3 +35,50 @@
   border-radius: 5px;
   padding: 10px;
 }
+
+
+/* Media query for screens with max-width of 802px */
+@media (max-width: 802px) {
+  .left {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  .left img {
+    width: 30%;
+    margin: 15px 0;
+  }
+
+  .left .link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .left .link .navlink {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+  }
+}
+
+/* Media query for screens with min-width 803px and max-width 1300px */
+@media (min-width: 803px) and (max-width: 1300px) {
+  .left {
+    width: 25%;
+  }
+
+  .left img {
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  .left .link .navlink {
+    width: 90%;
+    margin-left: 5%;
+  }
+}

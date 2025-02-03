@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Investments from "./pages/Investments";
 import Notifications from "./pages/Notifications";
+import Status from "./pages/Status"; // Assuming this is correct
 import "./App.css";
 
 const App = () => {
@@ -36,6 +37,10 @@ const App = () => {
     {
       path: "/ImageList/Notifications",
       element: <Notifications />,
+    },
+    {
+      path: "/status/:status", // ✅ Corrected dynamic route
+      element: <Status />, // Ensure you are using the correct component
     },
   ]);
 

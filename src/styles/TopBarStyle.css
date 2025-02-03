@@ -22,3 +22,44 @@
   color: springgreen;
   font-size: 12px;
 }
+
+/* Media query for screens with max-width of 802px */
+@media (max-width: 802px) {
+  .box {
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  .box p {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .box h4 {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .box h4 span {
+    font-size: 10px;
+  }
+}
+
+/* Media query for screens with min-width 803px and max-width 1300px */
+@media (min-width: 803px) and (max-width: 1300px) {
+  .box {
+    width: 45%;
+    margin-right: 3%;
+    padding: 12px;
+  }
+
+  .box p {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .box h4 {
+    margin-left: 15px;
+  }
+}

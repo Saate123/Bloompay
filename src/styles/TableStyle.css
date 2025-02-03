@@ -87,3 +87,72 @@ table tbody tr:last-child {
 .dialogue button:hover {
   background-color: red;
 }
+
+/* Media query for screens with max-width of 802px */
+@media (max-width: 802px) {
+  .bottom {
+    width: 100%;
+    margin: 10px auto;
+    box-shadow: none;
+  }
+
+  .bottom h3 {
+    margin-left: 2%;
+    font-size: 18px;
+  }
+
+  table {
+    width: 80%;
+    margin-left: 0;
+    border-radius: 10px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  table thead tr th,
+  table tbody td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .dialogue {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 280px;
+    padding: 8px;
+  }
+
+  .dialogue button {
+    width: 80px;
+    margin-left: calc(50% - 40px);
+  }
+}
+
+/* Media query for screens with min-width 803px and max-width 1300px */
+@media (min-width: 803px) and (max-width: 1300px) {
+  .bottom {
+    width: 95%;
+  }
+
+  .bottom h3 {
+    margin-left: 3%;
+  }
+
+  table {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  .dialogue {
+    left: 40%;
+    width: 320px;
+  }
+
+  .dialogue button {
+    margin-left: 110px;
+  }
+}
+

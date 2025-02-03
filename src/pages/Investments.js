@@ -5,13 +5,17 @@ import Table2 from "../components/Table2";
 
 function Investments() {
   const [title, setTitle] = useState("Investments");
+  const handleStatusClick = (status) => {
+    setTitle(`Investments - ${status}`);
+  };
+
   return (
     <div className="main">
       <LeftNav setTitle={setTitle} />
 
       <div className="right">
         <Header title={title} />
-        <Table2 />
+        <Table2 onStatusClick={handleStatusClick} />
       </div>
     </div>
   );

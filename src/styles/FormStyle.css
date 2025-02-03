@@ -107,3 +107,52 @@
 .back h3 {
   line-height: 60px;
 }
+
+
+/* Media query for screens with max-width of 802px */
+@media (max-width: 802px) {
+  .login form {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .login form input, .login form button {
+    width: 90%;
+  }
+  .login h5 {
+    bottom: 20px;
+  }
+  .login img {
+    width: 20%;
+    margin-left: 40%;
+  }
+  .login .made {
+    font-size: 10px;
+  }
+  .back h3 {
+    line-height: 40px;
+  }
+}
+
+/* Media query for screens with min-width 803px and max-width 1300px */
+@media (min-width: 803px) and (max-width: 1300px) {
+  .login form {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .login form input, .login form button {
+    width: 90%;
+  }
+  .login img {
+    width: 15%;
+    margin-left: 42%;
+  }
+  .login h5 {
+    bottom: 30px;
+  }
+  .login .made {
+    font-size: 11px;
+  }
+  .back h3 {
+    line-height: 50px;
+  }
+}

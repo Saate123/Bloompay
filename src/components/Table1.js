@@ -34,7 +34,9 @@ function TableRow(props) {
   return (
     <tr>
       <td>{props.sn}</td>
-      <td>{props.image}</td>
+      <td>
+        <img src={`${props.image}`} style={{ width: "50px" }} />
+      </td>
       <td>
         <Link to="#" onClick={handleDialogue}>
           {props.name}
@@ -84,7 +86,7 @@ function Table1() {
     },
     {
       sn: 2,
-      image:Image2,
+      image: Image2,
       name: "Echindo Saate",
       email: "saateechindo@gmail.com",
       number: "08021498512",
@@ -147,7 +149,7 @@ function Table1() {
     },
   ];
   return (
-    <div >
+    <div>
       <table>
         <TableHeader />
         <tbody>
