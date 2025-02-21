@@ -4,6 +4,7 @@ import { RiSearchLine } from "react-icons/ri";
 import { FiLogOut } from "react-icons/fi";
 import { IoMdSettings } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = ({ title }) => {
@@ -30,16 +31,25 @@ const Header = ({ title }) => {
           onBlur={() => setToggle(true)}
         />
       </div>
-      <Link to={"/"} style={{ fontSize: "20px", marginRight: "2%" , color:"black"}}>
+      <FaRegUser
+        style={{ fontSize: "20px", marginRight: "2%", color: "black" }}
+      />
+      <Link
+        to={"/"}
+        style={{ fontSize: "20px", marginRight: "2%", color: "black" }}
+      >
         <FiLogOut />
       </Link>
-      <Link to={"/"} style={{ fontSize: "20px", marginRight: "2%", color:"black"}}>
+      <Link
+        to={"/"}
+        style={{ fontSize: "20px", marginRight: "2%", color: "black" }}
+      >
         {" "}
         <IoMdSettings />
       </Link>
       <Link
         to={"/ImageList/Notifications"}
-        style={{ fontSize: "20px", marginRight: "2%", color:"black" }}
+        style={{ fontSize: "20px", marginRight: "2%", color: "black" }}
       >
         {" "}
         <IoNotifications />

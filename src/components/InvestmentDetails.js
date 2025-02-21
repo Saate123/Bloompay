@@ -47,7 +47,7 @@ function InvestmentDetails() {
         className="butt"
         style={{ display: "flex", justifyContent: "center" }}
       >
-        <button>Block User</button>
+        <button>End Investment</button>
         <button>Report User</button>
       </div>
     </div>

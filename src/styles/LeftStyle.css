@@ -2,6 +2,8 @@
   width: 20%;
   height: 100vh;
   box-shadow: 0 0 20px rgba(168, 143, 143, 0.15);
+  position: sticky;
+  top: 0;
 }
 .left img {
   width: 50%;
@@ -36,7 +38,6 @@
   padding: 10px;
 }
 
-
 /* Media query for screens with max-width of 802px */
 @media (max-width: 802px) {
   .left {
@@ -48,7 +49,7 @@
     align-items: center;
     padding-bottom: 20px;
   }
-  
+
   .left img {
     width: 30%;
     margin: 15px 0;
